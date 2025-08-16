@@ -1,0 +1,12 @@
+.desktop_container {
+  overflow: hidden;
+  height: 100%;
+  border: 10px var(--text-color) solid;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 14px;
+}
