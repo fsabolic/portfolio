@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px var(--primary-color) dashed;
+  padding: 0 20%;
+  cursor: pointer;
+}
+
+.container:hover {
+  background-color: #aacc4466;
+}
