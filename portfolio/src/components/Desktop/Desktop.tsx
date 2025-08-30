@@ -1,38 +1,48 @@
-import { useTheme } from "../../hooks/useTheme";
-import type { ThemeName } from "../../themes/ThemeName";
+import { useEffect, useMemo, useRef, useState } from "react";
 import classes from "./desktop.module.css";
+import { gridElements } from "./grid-elements";
+import { DesktopCell } from "./Cell/DesktopCell";
+import type { IconCellContent } from "../../models/IconCellContent";
 
 export default function Desktop() {
-  const { onThemeChange, theme } = useTheme();
+  const desktopDivRef = useRef<HTMLDivElement | null>(null);
+  const [columnNumber, setColumnNumber] = useState(10);
+  const [rowNumber, setRowNumber] = useState(5);
 
-  const themeButtons = [
-    { key: "colors-os", label: "ColorsOS", backgroundColor: "#9eef9eff" },
-    {
-      key: "modern-glass-os",
-      label: "ModernGlassOS",
-      backgroundColor: "#b2b2f6ff",
-    },
-    { key: "retro-os", label: "RetroOS", backgroundColor: "#ff9a9aff" },
-  ];
+  useEffect(() => {
+    if (desktopDivRef.current) {
+      const style = window.getComputedStyle(desktopDivRef.current);
+      const columns = style.gridTemplateColumns.split(" ").length;
+      const rows = style.gridTemplateRows.split(" ").length;
+      setColumnNumber(columns);
+      setRowNumber(rows);
+    }
+  }, []);
+
+  const gridList = useMemo(() => {
+    const tempList = new Array<IconCellContent | null>(
+      rowNumber * columnNumber
+    ).fill(null);
+    gridElements.forEach((element) => {
+      if (element.column < columnNumber && element.row < rowNumber) {
+        tempList[element.column + element.row * columnNumber] = element;
+      }
+    });
+    return tempList;
+  }, [rowNumber, columnNumber]);
+
+  const desktopCellsGrid = gridList.map((cell, index) => {
+    return cell ? (
+      <DesktopCell.Icon key={index} cell={cell} index={index} />
+    ) : (
+      <DesktopCell.Empty key={index} index={index} />
+    );
+  });
 
   return (
-    <main className={classes.desktop_container}>
-      <div className={classes.desktop}>
-        <div>
-          <p>Theme icon:</p>
-          <img src={theme.icons.iconTest} height="50px" width="50px" />
-        </div>
-        <div style={{ display: "flex", gap: "20px" }}>
-          {themeButtons.map(({ key, label, backgroundColor }) => (
-            <button
-              style={{ width: "150px", height: "50px", backgroundColor }}
-              key={key}
-              onClick={() => onThemeChange(key as ThemeName)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+    <main className={classes.desktopContainer}>
+      <div ref={desktopDivRef} className={classes.desktop}>
+        {desktopCellsGrid}
       </div>
     </main>
   );

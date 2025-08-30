@@ -1,12 +1,13 @@
-.desktop_container {
+.desktopContainer {
   overflow: hidden;
   height: 100%;
-  border: 10px var(--text-color) solid;
+  width: 100%;
 }
 
 .desktop {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 14px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0%, 100%));
+  grid-template-rows: repeat(6, minmax(0%, 100%));
+  gap: 1px;
 }
