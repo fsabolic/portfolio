@@ -1,5 +1,5 @@
-.taskbar_container {
+.taskbarContainer {
   background-color: var(--secondary-color);
-  height: 200px;
+  height: 100px;
   border: 10px var(--primary-color) solid;
 }
