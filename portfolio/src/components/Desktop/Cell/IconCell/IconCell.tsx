@@ -1,22 +1,23 @@
 import { DesktopCell } from "../DesktopCell";
 import type { IconCellContent } from "../../../../models/IconCellContent";
 import classes from "./icon-cell.module.css";
-import { useTheme } from "../../../../hooks/useTheme";
 
 interface IconCellProps {
   cell: IconCellContent;
-  index: number;
 }
 
 function IconCell(props: IconCellProps) {
-  const { theme } = useTheme();
   return (
-    <DesktopCell.Container index={props.index}>
-      <DesktopCell.Content index={props.index}>
-        <div className={classes.cellContent}>
-          <img src={theme.icons.iconTest} className={classes.cellImage} />
+    <DesktopCell.Container id={props.cell.id}>
+      <DesktopCell.Content id={props.cell.id}>
+        <div
+          id={props.cell.id}
+          className={classes.cellContent}
+          onDoubleClick={props.cell.value.onClick}
+        >
+          <img src={props.cell.value.icon} className={classes.cellImage} />
           <p className={classes.cellText}>
-            {props.cell.value} {props.index}
+            {props.cell.value.title}'{props.cell.id}
           </p>
         </div>
       </DesktopCell.Content>

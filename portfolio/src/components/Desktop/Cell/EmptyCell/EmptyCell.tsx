@@ -1,12 +1,12 @@
 import { DesktopCell } from "../DesktopCell";
 
 interface EmptyCellProps {
-  index: number;
+  id: string;
 }
 
 function EmptyCell(props: EmptyCellProps) {
   return (
-    <DesktopCell.Container index={props.index}>
+    <DesktopCell.Container id={props.id}>
       <></>
     </DesktopCell.Container>
   );
