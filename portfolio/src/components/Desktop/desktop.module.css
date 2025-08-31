@@ -7,7 +7,11 @@
 .desktop {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(10, minmax(0%, 100%));
-  grid-template-rows: repeat(6, minmax(0%, 100%));
+  grid-template-columns: repeat(19, minmax(0%, 100%));
+  grid-template-rows: repeat(7, minmax(0%, 100%));
   gap: 1px;
+}
+
+.dragOverlay {
+  opacity: 0.75;
 }
