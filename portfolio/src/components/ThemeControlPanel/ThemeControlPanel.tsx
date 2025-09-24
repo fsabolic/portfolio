@@ -1,5 +1,6 @@
 import { useTheme } from "../../hooks/useTheme";
 import type { ThemeName } from "../../themes/ThemeName";
+import { Icon } from "../Icon/Icon";
 import classes from "./theme-control-panel.module.css";
 
 const themeButtons = [
@@ -13,7 +14,7 @@ const themeButtons = [
 ];
 
 function ThemeControlPanel() {
-  const { theme, onThemeChange } = useTheme();
+  const { onThemeChange } = useTheme();
 
   const handleThemeButtonClick = (key: string) => {
     onThemeChange(key as ThemeName);
@@ -21,7 +22,7 @@ function ThemeControlPanel() {
 
   return (
     <div className={classes.controlPanel}>
-      <img src={theme.icons.iconTest} className={classes.themeIcon} />
+      <Icon src={"iconTest"} className={classes.themeIcon} />
       <div className={classes.themeButtonsContainer}>
         {themeButtons.map(({ key, label, backgroundColor }) => (
           <button

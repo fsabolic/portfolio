@@ -1,6 +1,7 @@
 import { DesktopCell } from "../DesktopCell";
 import type { IconCellContent } from "../../../../models/IconCellContent";
 import classes from "./icon-cell.module.css";
+import { Icon } from "../../../Icon/Icon";
 
 interface IconCellProps {
   cell: IconCellContent;
@@ -15,7 +16,7 @@ function IconCell(props: IconCellProps) {
           className={classes.cellContent}
           onDoubleClick={props.cell.value.onClick}
         >
-          <img src={props.cell.value.icon} className={classes.cellImage} />
+          <Icon src={props.cell.value.icon} className={classes.cellImage} />
           <p className={classes.cellText}>
             {props.cell.value.title}'{props.cell.id}
           </p>
