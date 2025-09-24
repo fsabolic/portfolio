@@ -1,0 +1,47 @@
+.borderGrid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 5px auto 5px;
+  grid-template-rows: 5px auto 5px;
+  pointer-events: none;
+}
+
+.topLeft {
+  cursor: nw-resize;
+  pointer-events: all;
+}
+.topMiddle {
+  cursor: n-resize;
+  pointer-events: all;
+}
+.topRight {
+  cursor: ne-resize;
+  pointer-events: all;
+}
+.middleLeft {
+  cursor: w-resize;
+  pointer-events: all;
+}
+.middleMiddle {
+  pointer-events: none;
+  cursor: default;
+  z-index: 0;
+}
+.middleRight {
+  cursor: e-resize;
+  pointer-events: all;
+}
+.bottomLeft {
+  cursor: sw-resize;
+  pointer-events: all;
+}
+.bottomMiddle {
+  cursor: s-resize;
+  pointer-events: all;
+}
+.bottomRight {
+  cursor: se-resize;
+  pointer-events: all;
+}
