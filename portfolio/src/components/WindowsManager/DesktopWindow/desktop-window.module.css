@@ -1,0 +1,6 @@
+.windowContainer {
+  touch-action: none;
+  pointer-events: all;
+  opacity: 1;
+  position: absolute;
+}

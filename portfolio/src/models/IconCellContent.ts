@@ -1,8 +1,9 @@
+import type { IconKey } from "./IconKey";
 import type { CellContentBase } from "./CellContentBase";
 
 interface IconCellValue {
   title: string;
-  icon: string;
+  icon: IconKey;
   contains: CellContentBase[];
   onClick: () => void;
 }
