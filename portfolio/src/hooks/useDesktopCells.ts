@@ -16,21 +16,32 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
   const [columnCount, setColumnCount] = useState(columns);
 
   const iconCellDefinitions: IconDefinition[] = useMemo(
-    () => [
-      { row: 0, column: 0, title: "a" },
-      { row: 0, column: 1, title: "b" },
-      { row: 0, column: 2, title: "c" },
-      { row: 1, column: 0, title: "d" },
-      { row: 1, column: 1, title: "i" },
-      { row: 1, column: 2, title: "j" },
-      { row: 2, column: 0, title: "q" },
-      { row: 2, column: 1, title: "ae" },
-      { row: 2, column: 2, title: "af" },
-      { row: 3, column: 0, title: "al" },
-      { row: 3, column: 1, title: "am" },
-      { row: 3, column: 2, title: "an" },
-      { row: 4, column: 0, title: "as" },
-    ],
+    () =>
+      [
+        //Top left side
+        { row: 0, column: 0, title: "About Me", icon: "aboutMe" },
+        {
+          row: 0,
+          column: 1,
+          title: "Certificates and Awards",
+          icon: "certificatesAndAwards",
+        },
+        { row: 1, column: 0, title: "Web Portfolio", icon: "webPortfolio" },
+        { row: 1, column: 1, title: "Projects", icon: "projects" },
+        { row: 2, column: 0, title: "Browser", icon: "browser" },
+        { row: 2, column: 1, title: "Github", icon: "github" },
+        { row: 3, column: 0, title: "Contact Me", icon: "contactMe" },
+
+        //Bottom left side
+        { row: 5, column: 0, title: "Snake", icon: "snake" },
+        { row: 6, column: 0, title: "3D Explosion Sim", icon: "explosionSim" },
+        { row: 6, column: 1, title: "Cast N Crew", icon: "castNCrew" },
+
+        //Right side
+        { row: 0, column: 18, title: "Recycle Bin", icon: "recycleBin" },
+        { row: 1, column: 18, title: "Calendar", icon: "calendar" },
+        { row: 2, column: 18, title: "Calculator", icon: "calculator" },
+      ] as IconDefinition[],
     []
   );
 
@@ -46,7 +57,7 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
           column: def.column,
           value: {
             title: def.title,
-            icon: "iconTest",
+            icon: def.icon,
             contains: [],
             onClick: () => {
               openWindow({
@@ -60,7 +71,7 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
                   y: Math.random() * 500,
                 },
                 isFocused: false,
-                title: { text: def.title, icon: "iconTest" },
+                title: { text: def.title, icon: def.icon },
               });
             },
           },
