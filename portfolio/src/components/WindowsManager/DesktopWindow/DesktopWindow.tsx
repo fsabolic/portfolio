@@ -8,11 +8,11 @@ import { type DragHandle } from "../../../models/constants/DragHandle";
 import WindowTitleBar from "./WindowTitleBar/WindowTitleBar";
 import WindowResizeHandlerGrid from "./WindowResizeHandlerGrid/WindowResizeHandlerGrid";
 
-interface WindowContainerProps {
+interface DesktopWindowProps {
   window: DesktopWindow;
 }
 
-export function DesktopWindow({ window }: WindowContainerProps) {
+export function DesktopWindow({ window }: DesktopWindowProps) {
   const [isResizing, setIsResizing] = useState(false);
   const [windowState, setWindowState] = useState(window);
   const stateRef = useRef(windowState);
@@ -156,7 +156,11 @@ export function DesktopWindow({ window }: WindowContainerProps) {
       />
       <iframe
         src="https://brziotkupvozila.com"
-        style={{ width: "100%", height: "100%", overflow: "hidden" }}
+        style={{
+          width: "100%",
+          height: "calc(100% - 40px)",
+          overflow: "hidden",
+        }}
       ></iframe>
     </div>
   );
