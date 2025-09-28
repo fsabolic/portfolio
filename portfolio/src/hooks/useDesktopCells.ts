@@ -63,8 +63,8 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
               openWindow({
                 id: id,
                 dimensions: {
-                  height: Math.random() * 800 + 100,
-                  width: Math.random() * 800 + 500,
+                  height: def.windowSettings?.dimensions?.height ?? 500,
+                  width: def.windowSettings?.dimensions?.width ?? 800,
                 },
                 coordinates: {
                   x: Math.random() * 1000,
@@ -72,6 +72,7 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
                 },
                 isFocused: false,
                 title: { text: def.title, icon: def.icon },
+                blockAutoPositioning: false,
               });
             },
           },

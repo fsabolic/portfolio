@@ -8,4 +8,5 @@ export interface DesktopWindow {
   coordinates: Coordinates2D;
   isFocused: boolean;
   dimensions: Dimensions2D;
+  blockAutoPositioning?: boolean;
 }
