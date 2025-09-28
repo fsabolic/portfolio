@@ -17,9 +17,7 @@ function IconCell(props: IconCellProps) {
           onDoubleClick={props.cell.value.onClick}
         >
           <Icon src={props.cell.value.icon} className={classes.cellImage} />
-          <p className={classes.cellText}>
-            {props.cell.value.title}'{props.cell.id}
-          </p>
+          <p className={classes.cellText}>{props.cell.value.title}</p>
         </div>
       </DesktopCell.Content>
     </DesktopCell.Container>
