@@ -1,4 +1,4 @@
-import classes from "./not-implemented.module.css";
+import classes from "./not-implemented-window.module.css";
 function NotImplementedWindow() {
   return (
     <div className={classes.container}>
