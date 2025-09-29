@@ -11,7 +11,7 @@ import {
   type DragEndEvent,
   type DragStartEvent,
 } from "@dnd-kit/core";
-import { useDesktopCells } from "../../hooks/useDesktopCells";
+import { useDesktopCells } from "../../hooks/useDesktopCells.tsx";
 import type { CellContentBase } from "../../models/CellContentBase";
 import { CellContentTypes } from "../../models/constants/CellContentTypes";
 

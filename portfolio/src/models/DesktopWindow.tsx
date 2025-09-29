@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import type { Coordinates2D } from "./Coordinates2D";
 import type { Dimensions2D } from "./Dimensions2D";
 import type { WindowTitle } from "./WindowTitle";
@@ -9,4 +10,5 @@ export interface DesktopWindow {
   isFocused: boolean;
   dimensions: Dimensions2D;
   blockAutoPositioning?: boolean;
+  content: JSX.Element;
 }

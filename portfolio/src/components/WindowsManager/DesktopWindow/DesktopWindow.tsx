@@ -154,14 +154,7 @@ export function DesktopWindow({ window }: DesktopWindowProps) {
         listeners={listeners}
         attributes={attributes}
       />
-      <iframe
-        src="https://brziotkupvozila.com"
-        style={{
-          width: "100%",
-          height: "calc(100% - 40px)",
-          overflow: "hidden",
-        }}
-      ></iframe>
+      {window.content}
     </div>
   );
 }

@@ -8,6 +8,19 @@ import { CellContentTypes } from "../models/constants/CellContentTypes";
 import { useWindows } from "./useWindows";
 import type { GridOptions } from "../models/GridOptions";
 import type { IconDefinition } from "../models/IconDefinition";
+import { aboutMeWindowConfig } from "../components/WindowsManager/Windows/AboutMe/AboutMeConfig";
+import { browserWindowConfig } from "../components/WindowsManager/Windows/Browser/BrowserConfig";
+import { calculatorWindowConfig } from "../components/WindowsManager/Windows/Calculator/CalculatorConfig";
+import { calendarWindowConfig } from "../components/WindowsManager/Windows/Calendar/CalendarConfig";
+import { castNCrewWindowConfig } from "../components/WindowsManager/Windows/CastNCrew/CastNCrewConfig";
+import { certificatesAndAwardsWindowConfig } from "../components/WindowsManager/Windows/CertificatesAndAwards/CertificatesAndAwardsConfig";
+import { contactMeWindowConfig } from "../components/WindowsManager/Windows/ContactMe/ContactMeConfig";
+import { githubWindowConfig } from "../components/WindowsManager/Windows/Github/GithubConfig";
+import { projectsWindowConfig } from "../components/WindowsManager/Windows/Projects/ProjectsConfig";
+import { recycleBinWindowConfig } from "../components/WindowsManager/Windows/RecycleBin/RecycleBinConfig";
+import { snakeWindowConfig } from "../components/WindowsManager/Windows/Snake/SnakeConfig";
+import { webPortfolioWindowConfig } from "../components/WindowsManager/Windows/WebPortfolio/WebPortfolioConfig";
+import { explosionSimWindowConfig } from "../components/WindowsManager/Windows/3DExplosionSim/3DExplosionSimConfig";
 
 export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
   const { theme } = useTheme();
@@ -19,28 +32,23 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
     () =>
       [
         //Top left side
-        { row: 0, column: 0, title: "About Me", icon: "aboutMe" },
-        {
-          row: 0,
-          column: 1,
-          title: "Certificates and Awards",
-          icon: "certificatesAndAwards",
-        },
-        { row: 1, column: 0, title: "Web Portfolio", icon: "webPortfolio" },
-        { row: 1, column: 1, title: "Projects", icon: "projects" },
-        { row: 2, column: 0, title: "Browser", icon: "browser" },
-        { row: 2, column: 1, title: "Github", icon: "github" },
-        { row: 3, column: 0, title: "Contact Me", icon: "contactMe" },
+        aboutMeWindowConfig,
+        certificatesAndAwardsWindowConfig,
+        webPortfolioWindowConfig,
+        projectsWindowConfig,
+        browserWindowConfig,
+        githubWindowConfig,
+        contactMeWindowConfig,
 
         //Bottom left side
-        { row: 5, column: 0, title: "Snake", icon: "snake" },
-        { row: 6, column: 0, title: "3D Explosion Sim", icon: "explosionSim" },
-        { row: 6, column: 1, title: "Cast N Crew", icon: "castNCrew" },
+        snakeWindowConfig,
+        explosionSimWindowConfig,
+        castNCrewWindowConfig,
 
         //Right side
-        { row: 0, column: 18, title: "Recycle Bin", icon: "recycleBin" },
-        { row: 1, column: 18, title: "Calendar", icon: "calendar" },
-        { row: 2, column: 18, title: "Calculator", icon: "calculator" },
+        recycleBinWindowConfig,
+        calendarWindowConfig,
+        calculatorWindowConfig,
       ] as IconDefinition[],
     []
   );
@@ -73,6 +81,7 @@ export const useDesktopCells = ({ rows = 120, columns = 120 }: GridOptions) => {
                 isFocused: false,
                 title: { text: def.title, icon: def.icon },
                 blockAutoPositioning: false,
+                content: def.windowSettings.content,
               });
             },
           },

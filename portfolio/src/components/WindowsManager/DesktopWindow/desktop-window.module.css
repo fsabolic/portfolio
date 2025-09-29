@@ -3,4 +3,5 @@
   pointer-events: all;
   opacity: 1;
   position: absolute;
+  border: 2px green solid;
 }
