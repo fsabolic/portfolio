@@ -8,7 +8,7 @@ function App() {
   const { theme } = useTheme();
 
   return (
-    <div className={theme.name}>
+    <div className={`general-theme ${theme.name}`}>
       <div className="app-container">
         <WindowsManager />
         <Desktop />

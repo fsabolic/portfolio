@@ -1,4 +1,4 @@
-import type { DesktopWindow } from "../../../models/DesktopWindow";
+import type { DesktopWindow } from "../../../models/DesktopWindow.tsx";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import { useWindows } from "../../../hooks/useWindows";

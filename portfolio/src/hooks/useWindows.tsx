@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { DesktopWindow } from "../models/DesktopWindow";
+import type { DesktopWindow } from "../models/DesktopWindow.tsx";
 
 interface WindowContextProps {
   openWindows: DesktopWindow[];

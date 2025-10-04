@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import type { DesktopWindow } from "../models/DesktopWindow";
+import type { DesktopWindow } from "../models/DesktopWindow.tsx";
 import { WindowsContext } from "../hooks/useWindows";
 import type { Dimensions2D } from "../models/Dimensions2D";
 import type { Coordinates2D } from "../models/Coordinates2D";
