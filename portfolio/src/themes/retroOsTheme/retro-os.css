@@ -4,4 +4,6 @@
   --background-color: #e3f2fd;
   --text-color: #c31489;
   --font-family: 'Courier New", Courier, monospace"';
+  --taskbar-height: 30px;
+  --taskbar-width: 100%;
 }

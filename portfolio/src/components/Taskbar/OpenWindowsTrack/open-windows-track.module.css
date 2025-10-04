@@ -1,0 +1,9 @@
+.fileSystemTrack {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  width: 78%;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

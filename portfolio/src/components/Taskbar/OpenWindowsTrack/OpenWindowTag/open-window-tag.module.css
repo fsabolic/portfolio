@@ -1,0 +1,33 @@
+.openWindowTag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid red;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 20%;
+}
+
+.openWindowTagTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.openWindowTagIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.openWindowTagText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.openWindowTagCloseButton {
+  border-radius: 200px;
+  background-color: white;
+}
